@@ -1,0 +1,15 @@
+#copy this file in /etc/systemd/system/
+#values provided are just an example
+
+[Unit]
+Description=Jenkins Daemon
+
+[Service]
+ExecStart=/path/to/jenkins_repo/build_and_run.sh 8080 8081 /home/jenkins/jenkins_home
+WorkingDirectory=/home/jenkins/
+User=jenkins
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
