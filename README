@@ -1,0 +1,24 @@
+Jenkins
+=======
+
+This repo hosts script and Dockerfile to run jenkins.
+
+usage: jenkins_port java_web_start_port jenkins_home
+
+Example: ./build_and_run.sh 8080 8081 $(pwd)/here
+
+Will expose jenkins to: http://localhost:8080/, jws port to 8081, and jenkins
+files will be found in $(pwd)/here.
+
+Details
+-------
+
+Jenkins is run in a container using your current user, and jenkins files are
+accessible from host. To backup your jenkins instance, you simply have to save
+those files.
+
+First time run
+--------------
+
+First time you run jenkins, you are expected to enter an initialAdminPassword.
+It's automatically printed on stdout.
